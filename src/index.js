@@ -21,15 +21,16 @@ if (localStorage.getItem("Theme") === Theme.DARK) {
 }
 
 function OnOffTheme(event) {
-  bodyEl.classList.add(Theme.LIGHT);
   console.log(event);
   if (event.target.checked) {
-    bodyEl.classList.add(Theme.DARK);
-    bodyEl.classList.remove(Theme.LIGHT);
-    localStorage.setItem("Theme", Theme.DARK);
+    changeThemeFn(Theme.DARK, Theme.LIGHT);
   } else {
-    bodyEl.classList.add(Theme.LIGHT);
-    bodyEl.classList.remove(Theme.DARK);
-    localStorage.setItem("Theme", Theme.LIGHT);
+    changeThemeFn(Theme.LIGHT, Theme.DARK);
   }
 }
+
+const changeThemeFn = (newTheme, oldTheme) => {
+  bodyEl.classList.add(newTheme);
+  bodyEl.classList.remove(oldTheme);
+  localStorage.setItem("Theme", newTheme);
+};

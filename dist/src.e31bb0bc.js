@@ -2446,19 +2446,20 @@ if (localStorage.getItem("Theme") === Theme.DARK) {
 }
 
 function OnOffTheme(event) {
-  bodyEl.classList.add(Theme.LIGHT);
   console.log(event);
 
   if (event.target.checked) {
-    bodyEl.classList.add(Theme.DARK);
-    bodyEl.classList.remove(Theme.LIGHT);
-    localStorage.setItem("Theme", Theme.DARK);
+    changeThemeFn(Theme.DARK, Theme.LIGHT);
   } else {
-    bodyEl.classList.add(Theme.LIGHT);
-    bodyEl.classList.remove(Theme.DARK);
-    localStorage.setItem("Theme", Theme.LIGHT);
+    changeThemeFn(Theme.LIGHT, Theme.DARK);
   }
 }
+
+var changeThemeFn = function changeThemeFn(newTheme, oldTheme) {
+  bodyEl.classList.add(newTheme);
+  bodyEl.classList.remove(oldTheme);
+  localStorage.setItem("Theme", newTheme);
+};
 },{"./styles.css":"styles.css","./menu.json":"menu.json","./menu.hbs":"menu.hbs"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2487,7 +2488,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49410" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51342" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
