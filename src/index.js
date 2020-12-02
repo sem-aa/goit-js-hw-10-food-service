@@ -1,5 +1,3 @@
-import "./styles.css";
-
 import foodMenu from "./menu.json";
 import itemsFood from "./menu.hbs";
 const menuEl = document.querySelector(".js-menu");
