@@ -9,4 +9,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Focm":[function(require,module,exports) {
 "use strict";var e=r(require("./menu.json")),t=r(require("./menu.hbs"));function r(e){return e&&e.__esModule?e:{default:e}}var o=document.querySelector(".js-menu"),c=(0,t.default)(e.default);o.insertAdjacentHTML("beforeend",c),console.log(e.default);var a=document.querySelector("#theme-switch-toggle");a.addEventListener("change",s);var n=document.querySelector("body"),l={LIGHT:"light-theme",DARK:"dark-theme"};function s(e){console.log(e),e.target.checked?u(l.DARK,l.LIGHT):u(l.LIGHT,l.DARK)}localStorage.getItem("Theme")===l.DARK&&(n.classList.add(l.DARK),a.checked=!0);var u=function(e,t){n.classList.add(e),n.classList.remove(t),localStorage.setItem("Theme",e)};
 },{"./menu.json":"mA8c","./menu.hbs":"xkH1"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service.git/src.79766e6b.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.79766e6b.js.map
